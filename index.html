@@ -8,7 +8,6 @@
 
 <style>
 :root {
-  --bg: #f0ece4;
   --panel: #ffffffcc;
   --text: #2a2a2a;
   --muted: #555;
@@ -19,10 +18,12 @@
   --maxw: 900px;
 }
 
+/* Hintergrundbild */
 body {
   margin:0;
   font-family: "Georgia", serif;
-  background: var(--bg);
+  background: url('https://i.imgur.com/rrJtntk.jpeg') no-repeat center top;
+  background-size: cover;
   color: var(--text);
 }
 
@@ -70,14 +71,20 @@ header a {
   transform: translateY(0);
 }
 
+/* Fade-out mit Display:none nach Animation */
 .fade-out {
   opacity: 0;
   transform: translateY(-50px);
 }
 
+.fade-out.complete {
+  display: none;
+}
+
 .fade-in {
   opacity: 1;
   transform: translateY(0);
+  display: block;
 }
 
 #speisen {
@@ -134,22 +141,22 @@ footer {
   font-size:0.9rem;
 }
 
-/* ==================== Bilderanpassung ==================== */
+/* Bilder */
 .top-image {
   display: block;
   margin: 10px auto 40px auto;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
-  width: auto;          /* Breite automatisch */
-  max-width: 90%;       /* Maximal 90% des Containers */
-  max-height: 400px;    /* Maximal 400px hoch */
-  object-fit: cover;    /* proportional zuschneiden */
+  width: auto;
+  max-width: 90%;
+  max-height: 400px;
+  object-fit: cover;
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ==================== Überschriften ==================== */
+/* Überschriften */
 .welcome {
   font-size: 3rem;          
   text-align: center;
@@ -221,39 +228,35 @@ footer {
 document.getElementById('year').textContent = new Date().getFullYear();
 
 function showSpeisekarte() {
-  const welcome = document.getElementById('welcomeText');
-  const headline = document.getElementById('headlineText');
-  const topImg = document.getElementById('topImage');
-  const kathleenImg = document.getElementById('kathleenImage');
+  const elements = [
+    document.getElementById('welcomeText'),
+    document.getElementById('headlineText'),
+    document.getElementById('topImage'),
+    document.getElementById('kathleenImage')
+  ];
 
-  // Alles oben fade-out inklusive beider Bilder
-  welcome.classList.add('fade-out');
-  headline.classList.add('fade-out');
-  topImg.classList.add('fade-out');
-  kathleenImg.classList.add('fade-out');
+  elements.forEach(el => el.classList.add('fade-out'));
 
-  // Speisekarte fade-in nach Delay
   setTimeout(() => {
+    elements.forEach(el => el.classList.add('complete'));
     document.getElementById('speisen').classList.add('show');
   }, 800);
 }
 
 function showStart() {
-  const speisen = document.getElementById('speisen');
+  const elements = [
+    document.getElementById('welcomeText'),
+    document.getElementById('headlineText'),
+    document.getElementById('topImage'),
+    document.getElementById('kathleenImage')
+  ];
 
-  // Speisekarte fade-out
-  speisen.classList.remove('show');
+  document.getElementById('speisen').classList.remove('show');
 
-  // Obere Elemente fade-in inklusive beider Bilder
-  const welcome = document.getElementById('welcomeText');
-  const headline = document.getElementById('headlineText');
-  const topImg = document.getElementById('topImage');
-  const kathleenImg = document.getElementById('kathleenImage');
-
-  welcome.classList.remove('fade-out');
-  headline.classList.remove('fade-out');
-  topImg.classList.remove('fade-out');
-  kathleenImg.classList.remove('fade-out');
+  elements.forEach(el => {
+    el.classList.remove('fade-out', 'complete');
+    el.classList.add('fade-in');
+  });
 }
 </script>
 </body>
