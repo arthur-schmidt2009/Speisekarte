@@ -61,6 +61,7 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 1.2rem;
+      cursor: pointer;
     }
 
     .brand {
@@ -134,6 +135,9 @@
       line-height: 1.5;
     }
 
+    /* Speisekarte initial unsichtbar */
+    #speisen { display: none; }
+
     footer {
       text-align:center;
       padding:20px 0;
@@ -149,7 +153,7 @@
   <header>
     <div class="container nav">
       <a href="#top">Start</a>
-      <a href="#speisen">Speisekarte</a>
+      <a onclick="showSpeisekarte()">Speisekarte</a> <!-- Klick zeigt Speisekarte -->
     </div>
   </header>
 
@@ -173,7 +177,7 @@
   </section>
 
   <!-- ====================== SPEISEN ====================== -->
-  <section id="speisen" class="container" style="padding-top: 250px;"> <!-- ⭐ Hier weiter unten starten -->
+  <section id="speisen" class="container">
   
     <h2>Fleischgerichte</h2>
     <div class="card">
@@ -210,6 +214,13 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Funktion zum Einblenden der Speisekarte
+  function showSpeisekarte() {
+    const speisen = document.getElementById('speisen');
+    speisen.style.display = 'block';
+    speisen.scrollIntoView({behavior: 'smooth'});
+  }
 </script>
 
 </body>
