@@ -1,278 +1,292 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kathleen's 50. Geburtstag</title>
-  <meta name="description" content="Speisekarte zur Geburtstagsfeier" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kathleen's 50. Geburtstag</title>
+<meta name="description" content="Speisekarte zur Geburtstagsfeier" />
 
-  <style>
-    :root {
-      --bg: #f0ece4;
-      --panel: #ffffffcc;
-      --text: #2a2a2a;
-      --muted: #555;
-      --primary: #8b0000;
-      --border: #d3c8b6;
-      --radius: 16px;
-      --shadow: 0 6px 20px rgba(0,0,0,0.15);
-      --maxw: 900px;
-    }
+<style>
+:root {
+  --bg: #f0ece4;
+  --panel: #ffffffcc;
+  --text: #2a2a2a;
+  --muted: #555;
+  --primary: #8b0000;
+  --border: #d3c8b6;
+  --radius: 16px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.15);
+  --maxw: 900px;
+}
 
-    body {
-      margin:0;
-      font-family: "Georgia", serif;
-      background: var(--bg) url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover fixed;
-      color: var(--text);
-    }
+body {
+  margin:0;
+  font-family: "Georgia", serif;
+  background: var(--bg) url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover fixed;
+  color: var(--text);
+}
 
-    .backdrop {
-      background: rgba(255,255,255,0.75);
-      min-height: 100vh;
-      padding-bottom: 40px;
-    }
+.backdrop {
+  background: rgba(255,255,255,0.75);
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
 
-    .container {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    header {
-      background: var(--panel);
-      border-bottom: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(10px);
-    }
+header {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
 
-    .nav {
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap: 30px;
-      height:80px;
-    }
+.nav {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap: 30px;
+  height:80px;
+}
 
-    .nav a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
+.nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
 
-    .welcome {
-      font-size: 2.8rem;
-      text-align: center;
-      color: purple;
-      margin: 30px 0 10px 0;
-      font-weight: bold;
-      letter-spacing: 1px;
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+.welcome {
+  font-size: 2.8rem;
+  text-align: center;
+  color: purple;
+  margin: 30px 0 10px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
-    .headline {
-      font-size: 2rem;
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 20px;
-      font-weight: bold;
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+.headline {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: bold;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
-    .top-image {
-      width: 100%;
-      max-width: 700px;
-      display: block;
-      margin: 10px auto 40px auto;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+.top-image {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 10px auto 40px auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
-    section { padding: 40px 0; }
+section { padding: 40px 0; }
 
-    h2 {
-      font-size: 1.9rem;
-      margin: 0 0 18px;
-      color: var(--primary);
-      text-align: center;
-      letter-spacing: 0.5px;
-    }
+h2 {
+  font-size: 1.9rem;
+  margin: 0 0 18px;
+  color: var(--primary);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
 
-    .card {
-      background: var(--panel);
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin-bottom: 40px;
-    }
+.card {
+  background: var(--panel);
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
+}
 
-    .item {
-      margin-bottom: 26px;
-    }
+.item {
+  margin-bottom: 26px;
+}
 
-    .item h3 {
-      margin: 0 0 6px;
-      font-size: 1.3rem;
-      color: var(--primary);
-    }
+.item h3 {
+  margin: 0 0 6px;
+  font-size: 1.3rem;
+  color: var(--primary);
+}
 
-    .item p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+.item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
 
-    #speisen {
-      display: none;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-    }
+/* Initialzustand Speisekarte */
+#speisen {
+  opacity: 0;
+  transform: translateY(50px);
+  display: none;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
-    #speisen.show {
-      display: block;
-      opacity: 1;
-    }
+/* Klassen für Animationen */
+.fade-out {
+  opacity: 0;
+  transform: translateY(-50px);
+}
 
-    .fade-out {
-      opacity: 0;
-      transform: translateY(-50px);
-    }
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .fade-in {
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+.show {
+  display: block;
+}
 
-    footer {
-      text-align:center;
-      padding:20px 0;
-      color: var(--muted);
-      font-size:0.9rem;
-    }
-  </style>
+footer {
+  text-align:center;
+  padding:20px 0;
+  color: var(--muted);
+  font-size:0.9rem;
+}
+</style>
 </head>
 
 <body>
 <div class="backdrop">
 
-  <header>
-    <div class="container nav">
-      <a onclick="showStart()">Start</a>
-      <a onclick="showSpeisekarte()">Speisekarte</a>
-    </div>
-  </header>
+<header>
+  <div class="container nav">
+    <a onclick="showStart()">Start</a>
+    <a onclick="showSpeisekarte()">Speisekarte</a>
+  </div>
+</header>
 
-  <section id="top" class="container">
+<section id="top" class="container">
 
-    <div class="welcome fade-in" id="welcomeText">Herzlich Willkommen</div>
-    <div class="headline fade-in" id="headlineText">Kathleen's 50. Geburtstag</div>
+  <div class="welcome fade-in" id="welcomeText">Herzlich Willkommen</div>
+  <div class="headline fade-in" id="headlineText">Kathleen's 50. Geburtstag</div>
 
-    <!-- Erstes Bild -->
-    <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Geburtstagsbild" class="top-image fade-in" id="topImage"/>
+  <!-- Erstes Bild -->
+  <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Geburtstagsbild" class="top-image fade-in" id="topImage"/>
 
-    <!-- Platzhalter für Kathleens Foto -->
-    <img 
-      src="https://via.placeholder.com/650x450?text=Hier+kommt+Kathleens+Foto+hin" 
-      alt="Kathleen Platzhalter" 
-      class="top-image fade-in"
-      style="margin-top: -10px;"
-      id="kathleenImage"
-    />
+  <!-- Platzhalter für Kathleens Foto -->
+  <img 
+    src="https://via.placeholder.com/650x450?text=Hier+kommt+Kathleens+Foto+hin" 
+    alt="Kathleen Platzhalter" 
+    class="top-image fade-in"
+    style="margin-top: -10px;"
+    id="kathleenImage"
+  />
 
-  </section>
+</section>
 
-  <!-- ====================== SPEISEN ====================== -->
-  <section id="speisen" class="container">
-  
-    <h2>Fleischgerichte</h2>
-    <div class="card">
-      <div class="item"><h3>Strauß / Pute</h3><p>Zartes, mildes Geflügelfleisch – perfekt für Gäste, die leichte Gerichte bevorzugen.</p></div>
-      <div class="item"><h3>Zwiebel-Sahne-Schnitzel</h3><p>Saftiges Schnitzel in cremiger Zwiebel-Sahnesoße – ein herzhaftes Lieblingsgericht.</p></div>
-      <div class="item"><h3>Lammbraten</h3><p>Aromatischer Braten aus feinem Lamm, langsam geschmort.</p></div>
-      <div class="item"><h3>Rehbraten</h3><p>Edles Wildgericht – zart und aromatisch.</p></div>
-      <div class="item"><h3>Kasseler</h3><p>Saftiges, leicht geräuchertes Fleisch.</p></div>
-      <div class="item"><h3>Fleischkäse / Zwiebeln</h3><p>Herzhafter Fleischkäse, auf Wunsch mit gebratenen Zwiebeln.</p></div>
-      <div class="item"><h3>Frikassee</h3><p>Cremiges Geflügelragout – mild und beliebt.</p></div>
-    </div>
+<!-- ====================== SPEISEN ====================== -->
+<section id="speisen" class="container">
 
-    <h2>Beilagen</h2>
-    <div class="card">
-      <div class="item"><h3>Rotkohl / Sauerkohl</h3></div>
-      <div class="item"><h3>Grüne Bohnen</h3></div>
-      <div class="item"><h3>Kartoffelklöße</h3></div>
-      <div class="item"><h3>Böhmische Knödel</h3></div>
-      <div class="item"><h3>Kroketten / Herzoginkartoffeln</h3></div>
-    </div>
+  <h2>Fleischgerichte</h2>
+  <div class="card">
+    <div class="item"><h3>Strauß / Pute</h3><p>Zartes, mildes Geflügelfleisch – perfekt für Gäste, die leichte Gerichte bevorzugen.</p></div>
+    <div class="item"><h3>Zwiebel-Sahne-Schnitzel</h3><p>Saftiges Schnitzel in cremiger Zwiebel-Sahnesoße – ein herzhaftes Lieblingsgericht.</p></div>
+    <div class="item"><h3>Lammbraten</h3><p>Aromatischer Braten aus feinem Lamm, langsam geschmort.</p></div>
+    <div class="item"><h3>Rehbraten</h3><p>Edles Wildgericht – zart und aromatisch.</p></div>
+    <div class="item"><h3>Kasseler</h3><p>Saftiges, leicht geräuchertes Fleisch.</p></div>
+    <div class="item"><h3>Fleischkäse / Zwiebeln</h3><p>Herzhafter Fleischkäse, auf Wunsch mit gebratenen Zwiebeln.</p></div>
+    <div class="item"><h3>Frikassee</h3><p>Cremiges Geflügelragout – mild und beliebt.</p></div>
+  </div>
 
-    <h2>Suppen</h2>
-    <div class="card">
-      <div class="item"><h3>Käselauchsuppe</h3></div>
-    </div>
+  <h2>Beilagen</h2>
+  <div class="card">
+    <div class="item"><h3>Rotkohl / Sauerkohl</h3></div>
+    <div class="item"><h3>Grüne Bohnen</h3></div>
+    <div class="item"><h3>Kartoffelklöße</h3></div>
+    <div class="item"><h3>Böhmische Knödel</h3></div>
+    <div class="item"><h3>Kroketten / Herzoginkartoffeln</h3></div>
+  </div>
 
-  </section>
+  <h2>Suppen</h2>
+  <div class="card">
+    <div class="item"><h3>Käselauchsuppe</h3></div>
+  </div>
 
-  <footer>
-    © <span id="year"></span> Kathleen's 50. Geburtstag
-  </footer>
+</section>
+
+<footer>
+  © <span id="year"></span> Kathleen's 50. Geburtstag
+</footer>
 
 </div>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 
-  function showSpeisekarte() {
-    // Obere Elemente ausblenden
-    const welcomeText = document.getElementById('welcomeText');
-    const headlineText = document.getElementById('headlineText');
-    const topImage = document.getElementById('topImage');
-    const kathleenImage = document.getElementById('kathleenImage');
+function showSpeisekarte() {
+  // Fade-Out obere Elemente
+  const welcomeText = document.getElementById('welcomeText');
+  const headlineText = document.getElementById('headlineText');
+  const topImage = document.getElementById('topImage');
+  const kathleenImage = document.getElementById('kathleenImage');
+  
+  welcomeText.classList.add('fade-out');
+  headlineText.classList.add('fade-out');
+  topImage.classList.add('fade-out');
+  kathleenImage.classList.add('fade-out');
 
-    welcomeText.classList.add('fade-out');
-    headlineText.classList.add('fade-out');
-    topImage.classList.add('fade-out');
-    kathleenImage.classList.add('fade-out');
-
-    // Speisekarte einblenden nach Animation
-    setTimeout(() => {
-      document.getElementById('speisen').classList.add('show');
-      document.getElementById('speisen').scrollIntoView({behavior: 'smooth'});
-    }, 800);
-  }
-
-  function showStart() {
-    // Speisekarte ausblenden
+  // Speisekarte fade-in nach Delay
+  setTimeout(() => {
     const speisen = document.getElementById('speisen');
+    speisen.classList.add('show');
+    speisen.style.opacity = '1';
+    speisen.style.transform = 'translateY(0)';
+    speisen.scrollIntoView({behavior: 'smooth'});
+  }, 800);
+}
+
+function showStart() {
+  // Speisekarte fade-out
+  const speisen = document.getElementById('speisen');
+  speisen.style.opacity = '0';
+  speisen.style.transform = 'translateY(50px)';
+
+  // Nach Animation ausblenden
+  setTimeout(() => {
     speisen.classList.remove('show');
+  }, 800);
 
-    // Obere Elemente wieder einblenden
-    const welcomeText = document.getElementById('welcomeText');
-    const headlineText = document.getElementById('headlineText');
-    const topImage = document.getElementById('topImage');
-    const kathleenImage = document.getElementById('kathleenImage');
+  // Fade-in obere Elemente
+  const welcomeText = document.getElementById('welcomeText');
+  const headlineText = document.getElementById('headlineText');
+  const topImage = document.getElementById('topImage');
+  const kathleenImage = document.getElementById('kathleenImage');
 
-    welcomeText.classList.remove('fade-out');
-    headlineText.classList.remove('fade-out');
-    topImage.classList.remove('fade-out');
-    kathleenImage.classList.remove('fade-out');
+  welcomeText.classList.remove('fade-out');
+  headlineText.classList.remove('fade-out');
+  topImage.classList.remove('fade-out');
+  kathleenImage.classList.remove('fade-out');
 
-    // kleine Verzögerung, damit Fade-In smooth wirkt
-    setTimeout(() => {
-      welcomeText.classList.add('fade-in');
-      headlineText.classList.add('fade-in');
-      topImage.classList.add('fade-in');
-      kathleenImage.classList.add('fade-in');
-      document.getElementById('top').scrollIntoView({behavior: 'smooth'});
-    }, 50);
-  }
+  welcomeText.classList.add('fade-in');
+  headlineText.classList.add('fade-in');
+  topImage.classList.add('fade-in');
+  kathleenImage.classList.add('fade-in');
+
+  document.getElementById('top').scrollIntoView({behavior: 'smooth'});
+}
 </script>
 
 </body>
