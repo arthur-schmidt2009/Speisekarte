@@ -64,14 +64,6 @@
       cursor: pointer;
     }
 
-    .brand {
-      font-weight:800;
-      font-size:2rem;
-      color: var(--primary);
-      letter-spacing: 1px;
-      text-align:center;
-    }
-
     .welcome {
       font-size: 2.8rem;
       text-align: center;
@@ -79,6 +71,7 @@
       margin: 30px 0 10px 0;
       font-weight: bold;
       letter-spacing: 1px;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .headline {
@@ -87,6 +80,7 @@
       color: var(--primary);
       margin-bottom: 20px;
       font-weight: bold;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .top-image {
@@ -97,6 +91,7 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     section { padding: 40px 0; }
@@ -135,8 +130,21 @@
       line-height: 1.5;
     }
 
-    /* Speisekarte initial unsichtbar */
-    #speisen { display: none; }
+    #speisen {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    #speisen.show {
+      display: block;
+      opacity: 1;
+    }
+
+    .fade-out {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
 
     footer {
       text-align:center;
@@ -153,18 +161,17 @@
   <header>
     <div class="container nav">
       <a href="#top">Start</a>
-      <a onclick="showSpeisekarte()">Speisekarte</a> <!-- Klick zeigt Speisekarte -->
+      <a onclick="showSpeisekarte()">Speisekarte</a>
     </div>
   </header>
 
   <section id="top" class="container">
 
-    <div class="welcome">Herzlich Willkommen</div>
-
-    <div class="headline">Kathleen's 50. Geburtstag</div>
+    <div class="welcome" id="welcomeText">Herzlich Willkommen</div>
+    <div class="headline" id="headlineText">Kathleen's 50. Geburtstag</div>
 
     <!-- Erstes Bild -->
-    <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Geburtstagsbild" class="top-image" />
+    <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Geburtstagsbild" class="top-image" id="topImage"/>
 
     <!-- Platzhalter für Kathleens Foto -->
     <img 
@@ -172,6 +179,7 @@
       alt="Kathleen Platzhalter" 
       class="top-image"
       style="margin-top: -10px;"
+      id="kathleenImage"
     />
 
   </section>
@@ -215,11 +223,24 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Funktion zum Einblenden der Speisekarte
   function showSpeisekarte() {
-    const speisen = document.getElementById('speisen');
-    speisen.style.display = 'block';
-    speisen.scrollIntoView({behavior: 'smooth'});
+    // Elemente vom oberen Teil
+    const welcomeText = document.getElementById('welcomeText');
+    const headlineText = document.getElementById('headlineText');
+    const topImage = document.getElementById('topImage');
+    const kathleenImage = document.getElementById('kathleenImage');
+
+    // Fade-Out Animation
+    welcomeText.classList.add('fade-out');
+    headlineText.classList.add('fade-out');
+    topImage.classList.add('fade-out');
+    kathleenImage.classList.add('fade-out');
+
+    // Nach kurzer Verzögerung die Speisekarte einblenden
+    setTimeout(() => {
+      document.getElementById('speisen').classList.add('show');
+      document.getElementById('speisen').scrollIntoView({behavior: 'smooth'});
+    }, 800); // entspricht der CSS-Transition
   }
 </script>
 
