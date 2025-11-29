@@ -182,7 +182,7 @@ footer {
   <div class="headline" id="headlineText">Zu Kathleen's 50. Geburtstag</div>
 
   <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Geburtstagsbild" class="top-image" id="topImage"/>
-  <img src="https://via.placeholder.com/650x450?text=Hier+kommt+Kathleens+Foto+hin" alt="Kathleen" class="top-image" id="kathleenImage"/>
+  <img src="https://i.imgur.com/tUqpra0.jpeg" alt="Kathleen" class="top-image" id="kathleenImage"/>
 </section>
 
 <section id="speisen" class="container">
@@ -226,11 +226,13 @@ function showSpeisekarte() {
   const topImg = document.getElementById('topImage');
   const kathleenImg = document.getElementById('kathleenImage');
 
+  // Alles oben fade-out inklusive beider Bilder
   welcome.classList.add('fade-out');
   headline.classList.add('fade-out');
   topImg.classList.add('fade-out');
   kathleenImg.classList.add('fade-out');
 
+  // Speisekarte fade-in nach Delay
   setTimeout(() => {
     document.getElementById('speisen').classList.add('show');
   }, 800);
@@ -238,8 +240,11 @@ function showSpeisekarte() {
 
 function showStart() {
   const speisen = document.getElementById('speisen');
+
+  // Speisekarte fade-out
   speisen.classList.remove('show');
 
+  // Obere Elemente fade-in inklusive beider Bilder
   const welcome = document.getElementById('welcomeText');
   const headline = document.getElementById('headlineText');
   const topImg = document.getElementById('topImage');
