@@ -146,6 +146,12 @@
       transform: translateY(-50px);
     }
 
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
     footer {
       text-align:center;
       padding:20px 0;
@@ -160,24 +166,24 @@
 
   <header>
     <div class="container nav">
-      <a href="#top">Start</a>
+      <a onclick="showStart()">Start</a>
       <a onclick="showSpeisekarte()">Speisekarte</a>
     </div>
   </header>
 
   <section id="top" class="container">
 
-    <div class="welcome" id="welcomeText">Herzlich Willkommen</div>
-    <div class="headline" id="headlineText">Kathleen's 50. Geburtstag</div>
+    <div class="welcome fade-in" id="welcomeText">Herzlich Willkommen</div>
+    <div class="headline fade-in" id="headlineText">Kathleen's 50. Geburtstag</div>
 
     <!-- Erstes Bild -->
-    <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Geburtstagsbild" class="top-image" id="topImage"/>
+    <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Geburtstagsbild" class="top-image fade-in" id="topImage"/>
 
     <!-- Platzhalter für Kathleens Foto -->
     <img 
       src="https://via.placeholder.com/650x450?text=Hier+kommt+Kathleens+Foto+hin" 
       alt="Kathleen Platzhalter" 
-      class="top-image"
+      class="top-image fade-in"
       style="margin-top: -10px;"
       id="kathleenImage"
     />
@@ -224,23 +230,48 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   function showSpeisekarte() {
-    // Elemente vom oberen Teil
+    // Obere Elemente ausblenden
     const welcomeText = document.getElementById('welcomeText');
     const headlineText = document.getElementById('headlineText');
     const topImage = document.getElementById('topImage');
     const kathleenImage = document.getElementById('kathleenImage');
 
-    // Fade-Out Animation
     welcomeText.classList.add('fade-out');
     headlineText.classList.add('fade-out');
     topImage.classList.add('fade-out');
     kathleenImage.classList.add('fade-out');
 
-    // Nach kurzer Verzögerung die Speisekarte einblenden
+    // Speisekarte einblenden nach Animation
     setTimeout(() => {
       document.getElementById('speisen').classList.add('show');
       document.getElementById('speisen').scrollIntoView({behavior: 'smooth'});
-    }, 800); // entspricht der CSS-Transition
+    }, 800);
+  }
+
+  function showStart() {
+    // Speisekarte ausblenden
+    const speisen = document.getElementById('speisen');
+    speisen.classList.remove('show');
+
+    // Obere Elemente wieder einblenden
+    const welcomeText = document.getElementById('welcomeText');
+    const headlineText = document.getElementById('headlineText');
+    const topImage = document.getElementById('topImage');
+    const kathleenImage = document.getElementById('kathleenImage');
+
+    welcomeText.classList.remove('fade-out');
+    headlineText.classList.remove('fade-out');
+    topImage.classList.remove('fade-out');
+    kathleenImage.classList.remove('fade-out');
+
+    // kleine Verzögerung, damit Fade-In smooth wirkt
+    setTimeout(() => {
+      welcomeText.classList.add('fade-in');
+      headlineText.classList.add('fade-in');
+      topImage.classList.add('fade-in');
+      kathleenImage.classList.add('fade-in');
+      document.getElementById('top').scrollIntoView({behavior: 'smooth'});
+    }, 50);
   }
 </script>
 
