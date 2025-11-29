@@ -22,12 +22,12 @@
 body {
   margin:0;
   font-family: "Georgia", serif;
-  background: var(--bg) url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover fixed;
+  background: var(--bg);
   color: var(--text);
 }
 
 .backdrop {
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.9);
   min-height: 100vh;
   padding-bottom: 40px;
 }
@@ -46,17 +46,14 @@ header {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(10px);
-}
-
-.nav {
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
   gap: 30px;
-  height:80px;
+  height: 80px;
+  align-items: center;
 }
 
-.nav a {
+header a {
   color: var(--primary);
   text-decoration: none;
   font-weight: bold;
@@ -64,40 +61,35 @@ header {
   cursor: pointer;
 }
 
-.welcome {
-  font-size: 2.8rem;
-  text-align: center;
-  color: purple;
-  margin: 30px 0 10px 0;
-  font-weight: bold;
-  letter-spacing: 1px;
-  opacity: 1;
-  transform: translateY(0);
+.welcome, .headline, .top-image, #speisen {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.headline {
-  font-size: 2rem;
-  text-align: center;
-  color: var(--primary);
-  margin-bottom: 20px;
-  font-weight: bold;
+.welcome, .headline, .top-image {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.top-image {
-  width: 100%;
-  max-width: 700px;
+.fade-out {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#speisen {
+  opacity: 0;
+  transform: translateY(50px);
+  display: none;
+}
+
+#speisen.show {
   display: block;
-  margin: 10px auto 40px auto;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 section { padding: 40px 0; }
@@ -107,7 +99,6 @@ h2 {
   margin: 0 0 18px;
   color: var(--primary);
   text-align: center;
-  letter-spacing: 0.5px;
 }
 
 .card {
@@ -136,29 +127,6 @@ h2 {
   line-height: 1.5;
 }
 
-/* Initialzustand Speisekarte */
-#speisen {
-  opacity: 0;
-  transform: translateY(50px);
-  display: none;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* Klassen für Animationen */
-.fade-out {
-  opacity: 0;
-  transform: translateY(-50px);
-}
-
-.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.show {
-  display: block;
-}
-
 footer {
   text-align:center;
   padding:20px 0;
@@ -172,43 +140,28 @@ footer {
 <div class="backdrop">
 
 <header>
-  <div class="container nav">
-    <a onclick="showStart()">Start</a>
-    <a onclick="showSpeisekarte()">Speisekarte</a>
-  </div>
+  <a onclick="showStart()">Start</a>
+  <a onclick="showSpeisekarte()">Speisekarte</a>
 </header>
 
 <section id="top" class="container">
+  <div class="welcome" id="welcomeText">Herzlich Willkommen</div>
+  <div class="headline" id="headlineText">Kathleen's 50. Geburtstag</div>
 
-  <div class="welcome fade-in" id="welcomeText">Herzlich Willkommen</div>
-  <div class="headline fade-in" id="headlineText">Kathleen's 50. Geburtstag</div>
-
-  <!-- Erstes Bild -->
-  <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Geburtstagsbild" class="top-image fade-in" id="topImage"/>
-
-  <!-- Platzhalter für Kathleens Foto -->
-  <img 
-    src="https://via.placeholder.com/650x450?text=Hier+kommt+Kathleens+Foto+hin" 
-    alt="Kathleen Platzhalter" 
-    class="top-image fade-in"
-    style="margin-top: -10px;"
-    id="kathleenImage"
-  />
-
+  <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Geburtstagsbild" class="top-image" id="topImage"/>
+  <img src="https://via.placeholder.com/650x450?text=Hier+kommt+Kathleens+Foto+hin" alt="Kathleen" class="top-image" id="kathleenImage"/>
 </section>
 
-<!-- ====================== SPEISEN ====================== -->
 <section id="speisen" class="container">
-
   <h2>Fleischgerichte</h2>
   <div class="card">
-    <div class="item"><h3>Strauß / Pute</h3><p>Zartes, mildes Geflügelfleisch – perfekt für Gäste, die leichte Gerichte bevorzugen.</p></div>
-    <div class="item"><h3>Zwiebel-Sahne-Schnitzel</h3><p>Saftiges Schnitzel in cremiger Zwiebel-Sahnesoße – ein herzhaftes Lieblingsgericht.</p></div>
-    <div class="item"><h3>Lammbraten</h3><p>Aromatischer Braten aus feinem Lamm, langsam geschmort.</p></div>
+    <div class="item"><h3>Strauß / Pute</h3><p>Zartes, mildes Geflügelfleisch.</p></div>
+    <div class="item"><h3>Zwiebel-Sahne-Schnitzel</h3><p>Saftiges Schnitzel in cremiger Soße.</p></div>
+    <div class="item"><h3>Lammbraten</h3><p>Aromatischer Lammbraten.</p></div>
     <div class="item"><h3>Rehbraten</h3><p>Edles Wildgericht – zart und aromatisch.</p></div>
     <div class="item"><h3>Kasseler</h3><p>Saftiges, leicht geräuchertes Fleisch.</p></div>
-    <div class="item"><h3>Fleischkäse / Zwiebeln</h3><p>Herzhafter Fleischkäse, auf Wunsch mit gebratenen Zwiebeln.</p></div>
-    <div class="item"><h3>Frikassee</h3><p>Cremiges Geflügelragout – mild und beliebt.</p></div>
+    <div class="item"><h3>Fleischkäse / Zwiebeln</h3><p>Herzhafter Fleischkäse mit Zwiebeln.</p></div>
+    <div class="item"><h3>Frikassee</h3><p>Cremiges Geflügelragout.</p></div>
   </div>
 
   <h2>Beilagen</h2>
@@ -224,70 +177,51 @@ footer {
   <div class="card">
     <div class="item"><h3>Käselauchsuppe</h3></div>
   </div>
-
 </section>
 
 <footer>
   © <span id="year"></span> Kathleen's 50. Geburtstag
 </footer>
-
 </div>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
 function showSpeisekarte() {
-  // Fade-Out obere Elemente
-  const welcomeText = document.getElementById('welcomeText');
-  const headlineText = document.getElementById('headlineText');
-  const topImage = document.getElementById('topImage');
-  const kathleenImage = document.getElementById('kathleenImage');
-  
-  welcomeText.classList.add('fade-out');
-  headlineText.classList.add('fade-out');
-  topImage.classList.add('fade-out');
-  kathleenImage.classList.add('fade-out');
+  // Obere Elemente fade-out
+  const welcome = document.getElementById('welcomeText');
+  const headline = document.getElementById('headlineText');
+  const topImg = document.getElementById('topImage');
+  const kathleenImg = document.getElementById('kathleenImage');
+
+  welcome.classList.add('fade-out');
+  headline.classList.add('fade-out');
+  topImg.classList.add('fade-out');
+  kathleenImg.classList.add('fade-out');
 
   // Speisekarte fade-in nach Delay
   setTimeout(() => {
     const speisen = document.getElementById('speisen');
     speisen.classList.add('show');
-    speisen.style.opacity = '1';
-    speisen.style.transform = 'translateY(0)';
-    speisen.scrollIntoView({behavior: 'smooth'});
   }, 800);
 }
 
 function showStart() {
   // Speisekarte fade-out
   const speisen = document.getElementById('speisen');
-  speisen.style.opacity = '0';
-  speisen.style.transform = 'translateY(50px)';
+  speisen.classList.remove('show');
 
-  // Nach Animation ausblenden
-  setTimeout(() => {
-    speisen.classList.remove('show');
-  }, 800);
+  // Obere Elemente fade-in
+  const welcome = document.getElementById('welcomeText');
+  const headline = document.getElementById('headlineText');
+  const topImg = document.getElementById('topImage');
+  const kathleenImg = document.getElementById('kathleenImage');
 
-  // Fade-in obere Elemente
-  const welcomeText = document.getElementById('welcomeText');
-  const headlineText = document.getElementById('headlineText');
-  const topImage = document.getElementById('topImage');
-  const kathleenImage = document.getElementById('kathleenImage');
-
-  welcomeText.classList.remove('fade-out');
-  headlineText.classList.remove('fade-out');
-  topImage.classList.remove('fade-out');
-  kathleenImage.classList.remove('fade-out');
-
-  welcomeText.classList.add('fade-in');
-  headlineText.classList.add('fade-in');
-  topImage.classList.add('fade-in');
-  kathleenImage.classList.add('fade-in');
-
-  document.getElementById('top').scrollIntoView({behavior: 'smooth'});
+  welcome.classList.remove('fade-out');
+  headline.classList.remove('fade-out');
+  topImg.classList.remove('fade-out');
+  kathleenImg.classList.remove('fade-out');
 }
 </script>
-
 </body>
 </html>
