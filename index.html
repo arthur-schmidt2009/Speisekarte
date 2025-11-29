@@ -18,7 +18,6 @@
   --maxw: 900px;
 }
 
-/* Hintergrundbild Startseite */
 body {
   margin:0;
   font-family: "Georgia", serif;
@@ -62,7 +61,7 @@ header a {
   cursor: pointer;
 }
 
-.welcome, .headline, .top-image, #speisen, #bilder {
+.welcome, .headline, .top-image, #speisen, #bilder, #kontakt {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
@@ -71,7 +70,6 @@ header a {
   transform: translateY(0);
 }
 
-/* Fade-out mit Display:none nach Animation */
 .fade-out {
   opacity: 0;
   transform: translateY(-50px);
@@ -87,7 +85,7 @@ header a {
   display: block;
 }
 
-#speisen, #bilder {
+#speisen, #bilder, #kontakt {
   opacity: 0;
   transform: translateY(50px);
   display: none;
@@ -99,15 +97,15 @@ header a {
   display: block;
   opacity: 1;
   transform: translateY(0);
-  background: url('https://waldschaetzchen.de/wp-content/uploads/2023/09/cupedia-hochkant.png') no-repeat center center;
+  background: url('https://i.imgur.com/Iu1dJLv.jpeg') no-repeat center center;
   background-size: cover;
 }
 
-#bilder.show {
+#bilder.show, #kontakt.show {
   display: block;
   opacity: 1;
   transform: translateY(0);
-  background: #fff0; /* Optional: halbtransparent */
+  background: #fff0;
 }
 
 section { padding: 40px 0; }
@@ -152,7 +150,6 @@ footer {
   font-size:0.9rem;
 }
 
-/* Bilder */
 .top-image {
   display: block;
   margin: 10px auto 40px auto;
@@ -167,7 +164,6 @@ footer {
   transform: translateY(0);
 }
 
-/* Überschriften */
 .welcome {
   font-size: 3rem;          
   text-align: center;
@@ -194,13 +190,13 @@ footer {
   <a onclick="showStart()">Start</a>
   <a onclick="showSpeisekarte()">Speisekarte</a>
   <a onclick="showBilder()">Bilder</a>
+  <a onclick="showKontakt()">Kontakt</a>
 </header>
 
 <!-- Startbereich -->
 <section id="top" class="container">
   <div class="welcome" id="welcomeText">Herzlich Willkommen</div>
   <div class="headline" id="headlineText">Zu Kathleen's 50. Geburtstag</div>
-
   <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Geburtstagsbild" class="top-image" id="topImage"/>
   <img src="https://i.imgur.com/tUqpra0.jpeg" alt="Kathleen" class="top-image" id="kathleenImage"/>
 </section>
@@ -243,6 +239,16 @@ footer {
   </div>
 </section>
 
+<!-- Kontaktbereich -->
+<section id="kontakt" class="container">
+  <h2>Kontakt für Bilder</h2>
+  <div class="card">
+    <p>Wenn du Bilder senden oder teilen möchtest, kannst du uns hier kontaktieren:</p>
+    <p><strong>Email:</strong> beispiel@email.de</p>
+    <p><strong>Telefon:</strong> 01234 567890</p>
+  </div>
+</section>
+
 <footer>
   © <span id="year"></span> Kathleen's 50. Geburtstag
 </footer>
@@ -252,8 +258,7 @@ footer {
 document.getElementById('year').textContent = new Date().getFullYear();
 
 function hideAll() {
-  // Alle Bereiche ausblenden
-  const sections = ['top','speisen','bilder'];
+  const sections = ['top','speisen','bilder','kontakt'];
   sections.forEach(id => {
     const el = document.getElementById(id);
     el.classList.remove('fade-in','show');
@@ -291,6 +296,14 @@ function showBilder() {
   setTimeout(() => {
     document.getElementById('bilder').classList.add('show');
     document.getElementById('bilder').classList.remove('fade-out','complete');
+  }, 500);
+}
+
+function showKontakt() {
+  hideAll();
+  setTimeout(() => {
+    document.getElementById('kontakt').classList.add('show');
+    document.getElementById('kontakt').classList.remove('fade-out','complete');
   }, 500);
 }
 </script>
