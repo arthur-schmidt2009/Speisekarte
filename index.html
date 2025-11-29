@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kathleens Speisekarte</title>
+  <meta name="description" content="Speisekarte zur Geburtstagsfeier" />
+
+  <style>
+    :root {
+      --bg: #f0ece4;               /* warmer beige Hintergrund */
+      --panel: #ffffffcc;          /* leicht transparentes Weiß */
+      --text: #2a2a2a;
+      --muted: #555;
+      --primary: #8b0000;          /* dunkles Weinrot */
+      --border: #d3c8b6;
+      --radius: 16px;
+      --shadow: 0 6px 20px rgba(0,0,0,0.15);
+      --maxw: 900px;
+    }
+
+    body {
+      margin:0;
+      font-family: "Georgia", serif;
+      background: var(--bg) url('https://images.unsplash.com/photo-1495195134817-aeb325a55b65?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover fixed;
+      color: var(--text);
+    }
+
+    .backdrop {
+      background: rgba(255,255,255,0.75);
+      min-height: 100vh;
+      padding-bottom: 40px;
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: var(--panel);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:80px;
+    }
+
+    .brand {
+      font-weight:800;
+      font-size:2rem;
+      color: var(--primary);
+      text-align:center;
+      letter-spacing: 1px;
+    }
+
+    section { padding: 40px 0; }
+    h2 {
+      font-size: 1.9rem;
+      margin: 0 0 18px;
+      color: var(--primary);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: var(--panel);
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 40px;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .item img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    .item h3 {
+      margin: 0 0 6px;
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+
+    .item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align:center;
+      padding:20px 0;
+      color: var(--muted);
+      font-size:0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+<div class="backdrop">
+  
+  <header>
+    <div class="container nav">
+      <div class="brand">Kathleens Speisekarte</div>
+    </div>
+  </header>
+
+  <section class="container">
+
+    <!-- ====================== FLEISCHGERICHTE ====================== -->
+    <h2>Fleischgerichte</h2>
+    <div class="card">
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1604908177073-b8eb1563a0c9?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Strauß / Pute</h3>
+          <p>Zartes helles Fleisch, mild im Geschmack – perfekt für Gäste, die leichte Gerichte bevorzugen.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1601074321709-d63f82c4c3fb?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Zwiebel-Sahne-Schnitzel</h3>
+          <p>Saftiges Schnitzel in cremiger Zwiebel-Sahnesoße – ein herzhaftes Lieblingsgericht.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1600699894660-f1b4c901d50c?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Lammbraten mit Soße</h3>
+          <p>Aromatischer Braten aus feinem Lammfleisch, langsam gegart und mit kräftiger Soße serviert.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1603048622657-bf14d6c2f3e4?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Rehbraten mit Soße</h3>
+          <p>Edles Wildgericht – besonders zart und voller Aroma, begleitet von einer dunklen Wildsoße.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Kasseler mit Soße</h3>
+          <p>Saftiges, leicht geräuchertes Fleisch – ein rustikaler Klassiker.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1598514982927-1c5c7d07212e?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Fleischkäse / Zwiebeln</h3>
+          <p>Herzhafter Fleischkäse, frisch aus dem Ofen, wahlweise mit gebratenen Zwiebeln.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Frikassee</h3>
+          <p>Klassisches Geflügelragout in cremiger Soße – mild, leicht und sehr beliebt.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ====================== BEILAGEN ====================== -->
+    <h2>Beilagen</h2>
+    <div class="card">
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1604908554168-3f6b7a3f90a4?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Rotkohl / Sauerkohl</h3>
+          <p>Traditionelle Beilagen – fruchtig-süß oder angenehm säuerlich.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1607278574719-3e1a0038bf91?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Grüne Bohnen</h3>
+          <p>Frisch und knackig, perfekt als leichte Beilage zu kräftigem Fleisch.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1573164574397-597aa1f2f9f8?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Kartoffelklöße</h3>
+          <p>Weiche, traditionelle Klöße – ideal zu kräftigen Soßen.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1598515215060-3c02f4c3cfd1?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Böhmische Knödel</h3>
+          <p>Lockere Brotteigknödel – perfekt zu Wild- und Bratengerichten.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1618160702438-017ca2dc7d56?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Kroketten / Herzoginkartoffeln</h3>
+          <p>Knusprige Kartoffelbeilagen – außen goldbraun, innen weich.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ====================== SUPPE ====================== -->
+    <h2>Suppen</h2>
+    <div class="card">
+
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=400&q=80">
+        <div>
+          <h3>Käselauchsuppe</h3>
+          <p>Cremige Suppe mit herzhaftem Käse, Lauch und würziger Einlage – perfekt zum Start.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © <span id="year"></span> Kathleens Speisekarte
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
