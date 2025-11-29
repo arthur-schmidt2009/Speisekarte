@@ -133,6 +133,21 @@ footer {
   color: var(--muted);
   font-size:0.9rem;
 }
+
+/* ==================== Bilderanpassung ==================== */
+.top-image {
+  display: block;
+  margin: 10px auto 40px auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  width: auto;          /* Breite automatisch */
+  max-width: 90%;       /* Maximal 90% des Containers */
+  max-height: 400px;    /* Maximal 400px hoch */
+  object-fit: cover;    /* proportional zuschneiden */
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
 
@@ -188,7 +203,6 @@ footer {
 document.getElementById('year').textContent = new Date().getFullYear();
 
 function showSpeisekarte() {
-  // Obere Elemente fade-out
   const welcome = document.getElementById('welcomeText');
   const headline = document.getElementById('headlineText');
   const topImg = document.getElementById('topImage');
@@ -199,19 +213,15 @@ function showSpeisekarte() {
   topImg.classList.add('fade-out');
   kathleenImg.classList.add('fade-out');
 
-  // Speisekarte fade-in nach Delay
   setTimeout(() => {
-    const speisen = document.getElementById('speisen');
-    speisen.classList.add('show');
+    document.getElementById('speisen').classList.add('show');
   }, 800);
 }
 
 function showStart() {
-  // Speisekarte fade-out
   const speisen = document.getElementById('speisen');
   speisen.classList.remove('show');
 
-  // Obere Elemente fade-in
   const welcome = document.getElementById('welcomeText');
   const headline = document.getElementById('headlineText');
   const topImg = document.getElementById('topImage');
