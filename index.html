@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kathleens Speisekarte</title>
+  <title>Kathleen's 50. Geburtstag</title>
   <meta name="description" content="Speisekarte zur Geburtstagsfeier" />
 
   <style>
     :root {
-      --bg: #f0ece4;               
-      --panel: #ffffffcc;          
+      --bg: #f0ece4;
+      --panel: #ffffffcc;
       --text: #2a2a2a;
       --muted: #555;
-      --primary: #8b0000;          
+      --primary: #8b0000;
       --border: #d3c8b6;
       --radius: 16px;
       --shadow: 0 6px 20px rgba(0,0,0,0.15);
@@ -52,7 +52,15 @@
       display:flex;
       justify-content:center;
       align-items:center;
+      gap: 30px;
       height:80px;
+    }
+
+    .nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
     }
 
     .brand {
@@ -63,11 +71,28 @@
       text-align:center;
     }
 
+    .welcome {
+      font-size: 2.8rem;
+      text-align: center;
+      color: purple;
+      margin: 30px 0 10px 0;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .headline {
+      font-size: 2rem;
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
     .top-image {
       width: 100%;
       max-width: 700px;
       display: block;
-      margin: 20px auto 40px auto;
+      margin: 10px auto 40px auto;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
@@ -120,105 +145,66 @@
 
 <body>
 <div class="backdrop">
-  
+
   <header>
     <div class="container nav">
-      <div class="brand">Kathleens Speisekarte</div>
+      <a href="#top">Start</a>
+      <a href="#speisen">Speisekarte</a>
+      <!-- Bilder-Menüpunkt wurde entfernt -->
     </div>
   </header>
 
-  <section class="container">
+  <section id="top" class="container">
 
-    <!-- Bild oben -->
-    <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Speisekarte Bild" class="top-image" />
+    <div class="welcome">Herzlich Willkommen</div>
 
-    <!-- ====================== FLEISCHGERICHTE ====================== -->
+    <div class="headline">Kathleen's 50. Geburtstag</div>
+
+    <!-- Erstes Bild -->
+    <img src="https://i.imgur.com/rrJtntk.jpeg" alt="Geburtstagsbild" class="top-image" />
+
+    <!-- Platzhalter für Kathleens Foto -->
+    <img 
+      src="https://via.placeholder.com/650x450?text=Hier+kommt+Kathleens+Foto+hin" 
+      alt="Kathleen Platzhalter" 
+      class="top-image"
+      style="margin-top: -10px;"
+    />
+
+  </section>
+
+  <!-- ====================== SPEISEN ====================== -->
+  <section id="speisen" class="container">
+
     <h2>Fleischgerichte</h2>
     <div class="card">
-
-      <div class="item">
-        <h3>Strauß / Pute</h3>
-        <p>Zartes, mildes Geflügelfleisch – perfekt für Gäste, die leichte Gerichte bevorzugen.</p>
-      </div>
-
-      <div class="item">
-        <h3>Zwiebel-Sahne-Schnitzel</h3>
-        <p>Saftiges Schnitzel in cremiger Zwiebel-Sahnesoße – ein herzhaftes Lieblingsgericht.</p>
-      </div>
-
-      <div class="item">
-        <h3>Lammbraten mit Soße</h3>
-        <p>Aromatischer Braten aus feinem Lamm, langsam geschmort und mit kräftiger Soße serviert.</p>
-      </div>
-
-      <div class="item">
-        <h3>Rehbraten mit Soße</h3>
-        <p>Edles Wildgericht – zart und aromatisch, begleitet von einer dunklen Wildsoße.</p>
-      </div>
-
-      <div class="item">
-        <h3>Kasseler mit Soße</h3>
-        <p>Saftiges, leicht geräuchertes Fleisch – ein klassisches Gericht für Liebhaber kräftiger Aromen.</p>
-      </div>
-
-      <div class="item">
-        <h3>Fleischkäse / Zwiebeln</h3>
-        <p>Herzhafter Fleischkäse, auf Wunsch mit gebratenen Zwiebeln – rustikal und beliebt.</p>
-      </div>
-
-      <div class="item">
-        <h3>Frikassee</h3>
-        <p>Cremiges Geflügelragout mit feinen Gemüsestückchen – mild und besonders für Kinder geeignet.</p>
-      </div>
-
+      <div class="item"><h3>Strauß / Pute</h3><p>Zartes, mildes Geflügelfleisch – perfekt für Gäste, die leichte Gerichte bevorzugen.</p></div>
+      <div class="item"><h3>Zwiebel-Sahne-Schnitzel</h3><p>Saftiges Schnitzel in cremiger Zwiebel-Sahnesoße – ein herzhaftes Lieblingsgericht.</p></div>
+      <div class="item"><h3>Lammbraten</h3><p>Aromatischer Braten aus feinem Lamm, langsam geschmort.</p></div>
+      <div class="item"><h3>Rehbraten</h3><p>Edles Wildgericht – zart und aromatisch.</p></div>
+      <div class="item"><h3>Kasseler</h3><p>Saftiges, leicht geräuchertes Fleisch.</p></div>
+      <div class="item"><h3>Fleischkäse / Zwiebeln</h3><p>Herzhafter Fleischkäse, auf Wunsch mit gebratenen Zwiebeln.</p></div>
+      <div class="item"><h3>Frikassee</h3><p>Cremiges Geflügelragout – mild und beliebt.</p></div>
     </div>
 
-    <!-- ====================== BEILAGEN ====================== -->
     <h2>Beilagen</h2>
     <div class="card">
-
-      <div class="item">
-        <h3>Rotkohl / Sauerkohl</h3>
-        <p>Traditionelle Beilagen – fruchtig-süß oder angenehm säuerlich.</p>
-      </div>
-
-      <div class="item">
-        <h3>Grüne Bohnen</h3>
-        <p>Frisch, knackig und ideal zu kräftigen Fleischgerichten.</p>
-      </div>
-
-      <div class="item">
-        <h3>Kartoffelklöße</h3>
-        <p>Weiche, traditionelle Klöße – perfekt zu reichhaltigen Soßen.</p>
-      </div>
-
-      <div class="item">
-        <h3>Böhmische Knödel</h3>
-        <p>Lockere Brotteigknödel – ideal zu Wild- und Bratengerichten.</p>
-      </div>
-
-      <div class="item">
-        <h3>Kroketten / Herzoginkartoffeln</h3>
-        <p>Knusprige, goldbraune Kartoffelbeilagen – außen kross, innen weich.</p>
-      </div>
-
+      <div class="item"><h3>Rotkohl / Sauerkohl</h3></div>
+      <div class="item"><h3>Grüne Bohnen</h3></div>
+      <div class="item"><h3>Kartoffelklöße</h3></div>
+      <div class="item"><h3>Böhmische Knödel</h3></div>
+      <div class="item"><h3>Kroketten / Herzoginkartoffeln</h3></div>
     </div>
 
-    <!-- ====================== SUPPEN ====================== -->
     <h2>Suppen</h2>
     <div class="card">
-
-      <div class="item">
-        <h3>Käselauchsuppe</h3>
-        <p>Cremige Suppe mit würzigem Käse und frischem Lauch – ideal zum Auftakt des Menüs.</p>
-      </div>
-
+      <div class="item"><h3>Käselauchsuppe</h3></div>
     </div>
 
   </section>
 
   <footer>
-    © <span id="year"></span> Kathleens Speisekarte
+    © <span id="year"></span> Kathleen's 50. Geburtstag
   </footer>
 
 </div>
