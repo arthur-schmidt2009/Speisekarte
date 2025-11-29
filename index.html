@@ -8,11 +8,11 @@
 
   <style>
     :root {
-      --bg: #f0ece4;               /* warmer beige Hintergrund */
-      --panel: #ffffffcc;          /* leicht transparentes Weiß */
+      --bg: #f0ece4;               
+      --panel: #ffffffcc;          
       --text: #2a2a2a;
       --muted: #555;
-      --primary: #8b0000;          /* dunkles Weinrot */
+      --primary: #8b0000;          
       --border: #d3c8b6;
       --radius: 16px;
       --shadow: 0 6px 20px rgba(0,0,0,0.15);
@@ -22,7 +22,7 @@
     body {
       margin:0;
       font-family: "Georgia", serif;
-      background: var(--bg) url('https://images.unsplash.com/photo-1495195134817-aeb325a55b65?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover fixed;
+      background: var(--bg) url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover fixed;
       color: var(--text);
     }
 
@@ -59,7 +59,6 @@
       font-weight:800;
       font-size:2rem;
       color: var(--primary);
-      text-align:center;
       letter-spacing: 1px;
     }
 
@@ -74,7 +73,7 @@
 
     .card {
       background: var(--panel);
-      padding: 22px;
+      padding: 30px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -82,18 +81,7 @@
     }
 
     .item {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 18px;
       margin-bottom: 26px;
-    }
-
-    .item img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
     }
 
     .item h3 {
@@ -134,121 +122,80 @@
     <div class="card">
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1604908177073-b8eb1563a0c9?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Strauß / Pute</h3>
-          <p>Zartes helles Fleisch, mild im Geschmack – perfekt für Gäste, die leichte Gerichte bevorzugen.</p>
-        </div>
+        <h3>Strauß / Pute</h3>
+        <p>Zartes, mildes Geflügelfleisch – perfekt für Gäste, die leichte Gerichte bevorzugen.</p>
       </div>
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1601074321709-d63f82c4c3fb?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Zwiebel-Sahne-Schnitzel</h3>
-          <p>Saftiges Schnitzel in cremiger Zwiebel-Sahnesoße – ein herzhaftes Lieblingsgericht.</p>
-        </div>
+        <h3>Zwiebel-Sahne-Schnitzel</h3>
+        <p>Saftiges Schnitzel in cremiger Zwiebel-Sahnesoße – ein herzhaftes Lieblingsgericht.</p>
       </div>
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1600699894660-f1b4c901d50c?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Lammbraten mit Soße</h3>
-          <p>Aromatischer Braten aus feinem Lammfleisch, langsam gegart und mit kräftiger Soße serviert.</p>
-        </div>
+        <h3>Lammbraten mit Soße</h3>
+        <p>Aromatischer Braten aus feinem Lamm, langsam geschmort und mit kräftiger Soße serviert.</p>
       </div>
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1603048622657-bf14d6c2f3e4?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Rehbraten mit Soße</h3>
-          <p>Edles Wildgericht – besonders zart und voller Aroma, begleitet von einer dunklen Wildsoße.</p>
-        </div>
+        <h3>Rehbraten mit Soße</h3>
+        <p>Edles Wildgericht – zart und aromatisch, begleitet von einer dunklen Wildsoße.</p>
       </div>
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Kasseler mit Soße</h3>
-          <p>Saftiges, leicht geräuchertes Fleisch – ein rustikaler Klassiker.</p>
-        </div>
+        <h3>Kasseler mit Soße</h3>
+        <p>Saftiges, leicht geräuchertes Fleisch – ein klassisches Gericht für Liebhaber kräftiger Aromen.</p>
       </div>
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1598514982927-1c5c7d07212e?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Fleischkäse / Zwiebeln</h3>
-          <p>Herzhafter Fleischkäse, frisch aus dem Ofen, wahlweise mit gebratenen Zwiebeln.</p>
-        </div>
+        <h3>Fleischkäse / Zwiebeln</h3>
+        <p>Herzhafter Fleischkäse, auf Wunsch mit gebratenen Zwiebeln – rustikal und beliebt.</p>
       </div>
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Frikassee</h3>
-          <p>Klassisches Geflügelragout in cremiger Soße – mild, leicht und sehr beliebt.</p>
-        </div>
+        <h3>Frikassee</h3>
+        <p>Cremiges Geflügelragout mit feinen Gemüsestückchen – mild und besonders für Kinder geeignet.</p>
       </div>
 
     </div>
-
 
     <!-- ====================== BEILAGEN ====================== -->
     <h2>Beilagen</h2>
     <div class="card">
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1604908554168-3f6b7a3f90a4?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Rotkohl / Sauerkohl</h3>
-          <p>Traditionelle Beilagen – fruchtig-süß oder angenehm säuerlich.</p>
-        </div>
+        <h3>Rotkohl / Sauerkohl</h3>
+        <p>Traditionelle Beilagen – fruchtig-süß oder angenehm säuerlich.</p>
       </div>
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1607278574719-3e1a0038bf91?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Grüne Bohnen</h3>
-          <p>Frisch und knackig, perfekt als leichte Beilage zu kräftigem Fleisch.</p>
-        </div>
+        <h3>Grüne Bohnen</h3>
+        <p>Frisch, knackig und ideal zu kräftigen Fleischgerichten.</p>
       </div>
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1573164574397-597aa1f2f9f8?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Kartoffelklöße</h3>
-          <p>Weiche, traditionelle Klöße – ideal zu kräftigen Soßen.</p>
-        </div>
+        <h3>Kartoffelklöße</h3>
+        <p>Weiche, traditionelle Klöße – perfekt zu reichhaltigen Soßen.</p>
       </div>
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1598515215060-3c02f4c3cfd1?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Böhmische Knödel</h3>
-          <p>Lockere Brotteigknödel – perfekt zu Wild- und Bratengerichten.</p>
-        </div>
+        <h3>Böhmische Knödel</h3>
+        <p>Lockere Brotteigknödel – ideal zu Wild- und Bratengerichten.</p>
       </div>
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1618160702438-017ca2dc7d56?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Kroketten / Herzoginkartoffeln</h3>
-          <p>Knusprige Kartoffelbeilagen – außen goldbraun, innen weich.</p>
-        </div>
+        <h3>Kroketten / Herzoginkartoffeln</h3>
+        <p>Knusprige, goldbraune Kartoffelbeilagen – außen kross, innen weich.</p>
       </div>
 
     </div>
 
-
-    <!-- ====================== SUPPE ====================== -->
+    <!-- ====================== SUPPEN ====================== -->
     <h2>Suppen</h2>
     <div class="card">
 
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=400&q=80">
-        <div>
-          <h3>Käselauchsuppe</h3>
-          <p>Cremige Suppe mit herzhaftem Käse, Lauch und würziger Einlage – perfekt zum Start.</p>
-        </div>
+        <h3>Käselauchsuppe</h3>
+        <p>Cremige Suppe mit würzigem Käse und frischem Lauch – ideal zum Auftakt des Menüs.</p>
       </div>
 
     </div>
