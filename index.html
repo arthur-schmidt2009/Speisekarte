@@ -4,7 +4,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kathleen's 50. Geburtstag</title>
-
 <style>
 :root {
   --panel: #ffffffcc;
@@ -89,21 +88,8 @@ h2 {
 .item p { margin:0; color:var(--muted); font-size:1rem; line-height:1.5; }
 
 /* Startbereich */
-.welcome {
-  font-size: 3rem;
-  text-align: center;
-  color: purple;
-  margin: 30px 0 10px 0;
-  font-weight: bold;
-}
-
-.headline {
-  font-size: 2.2rem;
-  text-align: center;
-  color: darkred;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+.welcome { font-size: 3rem; text-align: center; color: purple; margin: 30px 0 10px 0; font-weight: bold; }
+.headline { font-size: 2.2rem; text-align: center; color: darkred; font-weight: bold; margin-bottom: 20px; }
 
 /* Bilder */
 .top-image {
@@ -128,19 +114,10 @@ h2 {
 }
 
 /* Unsichtbar bis ausgewählt */
-.hidden {
-  display:none;
-  opacity:0;
-  transform: translateY(40px);
-}
-.show {
-  display:block;
-  opacity:1 !important;
-  transform: translateY(0);
-}
+.hidden { display:none; opacity:0; transform: translateY(40px); }
+.show { display:block; opacity:1 !important; transform: translateY(0); }
 </style>
 </head>
-
 <body>
 <div class="backdrop">
 
@@ -192,8 +169,41 @@ h2 {
 <section id="bilder" class="container fade hidden">
   <h2>Bildergalerie</h2>
   <div class="card" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
-    <!-- Alle neuen Bilder -->
+
+    <!-- Vorherige Bilder -->
+    <img src="https://i.imgur.com/QUwqgEl.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/7LjWpfR.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/A9C8IAA.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/mPDYesi.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/TduWi9j.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/LfTmQmt.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/OVONX73.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/GqTFGe8.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/Ur3aJKx.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/FouhCXc.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/aIKdQwT.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/24rWI4F.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/vuzTA4k.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/1V98giH.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/zorSUA9.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/iJlLVYx.jpeg" class="gallery-img" />
+
+    <!-- Neue Bilder -->
     <img src="https://i.imgur.com/ZWGGOXX.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/ey4AihW.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/VcOsRrS.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/VhP53kX.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/8S3XNdI.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/RbKsIvm.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/fEcev9h.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/RXcdDeP.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/7sHxCCZ.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/oJMPehD.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/Nj3hmjx.jpeg" class="gallery-img" />
+    <img src="https://i.imgur.com/5W7E2v4.jpeg" class="gallery-img" />
+    <!-- ... (füge hier alle restlichen Imgur-Links der neuen Bilder ein) ... -->
+    <img src="https://i.imgur.com/UHsXF2D.jpeg" class="gallery-img" />
+<img src="https://i.imgur.com/ZWGGOXX.jpeg" class="gallery-img" />
     <img src="https://i.imgur.com/ey4AihW.jpeg" class="gallery-img" />
     <img src="https://i.imgur.com/VcOsRrS.jpeg" class="gallery-img" />
     <img src="https://i.imgur.com/VhP53kX.jpeg" class="gallery-img" />
@@ -333,31 +343,10 @@ function hideAll() {
     sec.classList.remove("show");
   });
 }
-
-function showStart() {
-  hideAll();
-  document.getElementById("start").classList.add("show");
-  document.getElementById("start").classList.remove("hidden");
-}
-
-function showSpeisekarte() {
-  hideAll();
-  document.getElementById("speisen").classList.add("show");
-  document.getElementById("speisen").classList.remove("hidden");
-}
-
-function showBilder() {
-  hideAll();
-  document.getElementById("bilder").classList.add("show");
-  document.getElementById("bilder").classList.remove("hidden");
-}
-
-function showKontakt() {
-  hideAll();
-  document.getElementById("kontakt").classList.add("show");
-  document.getElementById("kontakt").classList.remove("hidden");
-}
+function showStart() { hideAll(); document.getElementById("start").classList.add("show"); document.getElementById("start").classList.remove("hidden"); }
+function showSpeisekarte() { hideAll(); document.getElementById("speisen").classList.add("show"); document.getElementById("speisen").classList.remove("hidden"); }
+function showBilder() { hideAll(); document.getElementById("bilder").classList.add("show"); document.getElementById("bilder").classList.remove("hidden"); }
+function showKontakt() { hideAll(); document.getElementById("kontakt").classList.add("show"); document.getElementById("kontakt").classList.remove("hidden"); }
 </script>
-
 </body>
 </html>
